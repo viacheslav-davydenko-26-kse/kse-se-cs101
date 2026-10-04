@@ -69,6 +69,9 @@ def parse_headers(raw):
     # ВАШ КОД. Пройдіть циклом кожен line у header_lines і зробіть із ним те
     # саме, що показано у зразку вище, складаючи все у словник result.
     # Початок циклу: for line in header_lines:
+    for line in header_lines:
+        name, value = line.split(b": ", 1)
+        result[name.decode()] = value.decode()
 
     return result
 
@@ -84,7 +87,7 @@ def get_body(raw):
     Для SAMPLE_RESPONSE має вийти "<html>Hello, world!</html>".
     """
     # Приберіть рядок нижче і напишіть свій код.
-    return ""
+    return raw.split(b"\r\n\r\n", 1)[1].decode(errors="replace")
 
 
 def http_get(host, path="/"):
