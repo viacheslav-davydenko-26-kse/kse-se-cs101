@@ -69,9 +69,18 @@ def is_valid_ipv4(s):
     True. Приклади: "1.2.3.4" -> True; "256.0.0.1" -> False (256 не влазить
     у байт); "1.2.3" -> False (замало частин); "a.b.c.d" -> False.
     """
-    # Приберіть рядок нижче і напишіть свій код.
-    return False
+    octets = s.split(".")
+    if len(octets) != 4:
+        return False
 
+    for octet in octets:
+        if not octet.isdigit():
+            return False
+
+        if int(octet) > 255 or int(octet) < 0:
+            return False
+
+    return True
 
 # Увесь код нижче виконується лише коли ви запускаєте цей файл напряму
 # (python part3_addresses.py). Так автоперевірка може імпортувати ваші
