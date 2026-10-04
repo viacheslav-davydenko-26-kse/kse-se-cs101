@@ -32,7 +32,7 @@ def ping_command(host, count):
         return ["ping", "-n", str(count), host]
     return ["ping", "-c", str(count), host]
 
-def tracerout_command(host):
+def traceroute_command(host):
     if sys.platform.startswith("win"):
         return ["tracert", host]
     return ["traceroute", host]
@@ -40,6 +40,8 @@ def tracerout_command(host):
 
 # Перевіряємо різницю в часі ping між серверами
 def test_time():
+    print()
+    print("========== test_time ==========")
     def get_time_from_ping(output):
         lines = output.split("\n")
         time = "" 
@@ -81,8 +83,41 @@ def test_time():
         output = output.format(*format_list)
         print(output)
 
+
+# Висвічує кількість вузлів до кожного серверу
+def test_traces():
+    print()
+    print("========== test_traces ==========")
+    def get_time_from_ping(output):
+        lines = output.split("\n")
+        time = "" 
+        try:
+            time = lines[1].split(" ")[-2]
+            return float(time.split("=", 1)[-1]) 
+        except:
+            return -1 
+
+    servers = [
+        "kse.ua",
+        "monobank.ua",
+        "privatbank.ua",
+        "github.com",
+        "google.com",
+        "cloudflare.com",
+        "x.com",
+    ]
+
+    server_nodes = {}
+    for server in servers:
+        code, output = run(traceroute_command(server))
+        nodes = len(output.split("\n")) - 2
+        server_nodes[server] = nodes 
+        print(server, nodes)
+
+
 def main():
     test_time()
+    test_traces()
 
 if __name__ == "__main__":
     main()
