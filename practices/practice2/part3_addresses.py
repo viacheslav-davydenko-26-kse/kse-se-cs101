@@ -47,8 +47,12 @@ def int_to_ip(n):
         ".".join(str(x) for x in [a, b, c, d])
     Перевірте себе: int_to_ip(ip_to_int("8.8.8.8")) має дати "8.8.8.8".
     """
-    # Приберіть рядок нижче і напишіть свій код.
-    return "0.0.0.0"
+    d = n % 256; n = n // 256 
+    c = n % 256; n = n // 256 
+    b = n % 256; n = n // 256 
+    a = n % 256; n = n // 256 
+
+    return ".".join(str(x) for x in [a, b, c, d])
 
 
 def is_valid_ipv4(s):
