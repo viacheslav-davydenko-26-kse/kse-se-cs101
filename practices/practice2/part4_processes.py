@@ -92,7 +92,7 @@ for line in output.splitlines()[:8]:
 # Ваш код:
 
 
-def tracerout_command(host):
+def traceroute_command(host):
     if sys.platform.startswith("win"):
         return ["tracert", host]
     return ["traceroute", host]
@@ -100,10 +100,10 @@ def tracerout_command(host):
 show("")
 show("=== Запускаємо traceroute як окремий процес ===")
 host = "example.com"
-show("Команда:", " ".join(tracerout_command(host)))
-code, output = run(tracerout_command(host))
+show("Команда:", " ".join(traceroute_command(host)))
+code, output = run(traceroute_command(host))
 show("Код завершення дочірнього процесу:", code)
-show("--- вивід tracerout ---")
+show("--- вивід traceroute ---")
 # Друкуємо лише перші кілька рядків виводу, щоб файл не роздувся.
 for line in output.splitlines():
     show(line)
