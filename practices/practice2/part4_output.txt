@@ -1,0 +1,15 @@
+=== Хто я такий ===
+PID цього процесу: 27078
+
+=== Запускаємо ping як окремий процес ===
+Команда: ping -c 3 example.com
+Код завершення дочірнього процесу: 0
+--- вивід ping ---
+PING example.com (172.66.147.243) 56(84) bytes of data.
+64 bytes from 172.66.147.243: icmp_seq=1 ttl=56 time=19.0 ms
+64 bytes from 172.66.147.243: icmp_seq=2 ttl=56 time=20.7 ms
+64 bytes from 172.66.147.243: icmp_seq=3 ttl=56 time=18.9 ms
+
+--- example.com ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2003ms
+rtt min/avg/max/mdev = 18.870/19.543/20.714/0.831 ms

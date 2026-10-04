@@ -92,6 +92,22 @@ for line in output.splitlines()[:8]:
 # Ваш код:
 
 
+def tracerout_command(host):
+    if sys.platform.startswith("win"):
+        return ["tracert", host]
+    return ["traceroute", host]
+
+show("")
+show("=== Запускаємо traceroute як окремий процес ===")
+host = "example.com"
+show("Команда:", " ".join(tracerout_command(host)))
+code, output = run(tracerout_command(host))
+show("Код завершення дочірнього процесу:", code)
+show("--- вивід tracerout ---")
+# Друкуємо лише перші кілька рядків виводу, щоб файл не роздувся.
+for line in output.splitlines():
+    show(line)
+
 
 # --- збереження результату, чіпати не треба -------------------------------
 with open("part4_output.txt", "w", encoding="utf-8") as f:
