@@ -197,7 +197,10 @@ show("")
 #     show(" ".join(MY_START), " ".join(produced))
 #
 # Ваш код:
+MY_START = ("інженери", "навчилися")
 
+produced = generate(model2, MY_START, 40, random.Random(69))
+show(" ".join(MY_START), " ".join(produced))
 
 
 # --- збереження результату, чіпати не треба -------------------------------
