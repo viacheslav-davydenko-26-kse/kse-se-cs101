@@ -201,3 +201,28 @@
 має бути з n послідовних слів з джерела.
 З цього випливає, що якщо почати контекст іншою мовою - буде те саме.
 Ну і ситуацію цю звичайно також не рятує випадковий вибір слів.
+
+Також стало цікаво, який має бути розмір контексту, щоб в результаті
+модель могла скоріювати ресурс повністю? На мої результатах це
+має бути мінім `n = 11`:
+```
+n: 1 is full copied?: False
+n: 2 is full copied?: False
+n: 3 is full copied?: False
+n: 4 is full copied?: False
+n: 5 is full copied?: False
+n: 6 is full copied?: False
+n: 7 is full copied?: False
+n: 8 is full copied?: False
+n: 9 is full copied?: False
+n: 10 is full copied?: False
+n: 11 is full copied?: True
+n: 12 is full copied?: True
+n: 13 is full copied?: True
+n: 14 is full copied?: True
+n: 15 is full copied?: True
+n: 16 is full copied?: True
+n: 17 is full copied?: True
+n: 18 is full copied?: True
+n: 19 is full copied?: True
+```
