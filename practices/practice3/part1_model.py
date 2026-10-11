@@ -76,7 +76,17 @@ def build_model(tokens, n):
     TypeError: unhashable type: 'list' — це означає рівно це й нічого більше.
     """
     # Приберіть рядок нижче і напишіть свій код.
-    return {}
+    model = {}
+
+    for i in range(len(tokens) - n):
+        key = tuple(tokens[i:i + n])
+        if key not in model:
+            model[key] = {}
+
+        next_word = tokens[i + n]
+        model[key][next_word] = model[key].get(next_word, 0) + 1
+
+    return model
 
 
 def predict_next(model, context):
