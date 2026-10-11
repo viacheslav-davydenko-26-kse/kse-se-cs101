@@ -162,7 +162,21 @@ def generate(model, context, length, rng=None):
     й поверніть те, що встигли породити.
     """
     # Приберіть рядок нижче і напишіть свій код.
-    return []
+    text = []
+    for i in range(length):
+        next_word = ""
+        if rng:
+            next_word = sample_next(model, context, rng)
+        else:
+            next_word = predict_next(model, context)
+
+        if next_word:
+            text.append(next_word)
+            context = context[1:] + (next_word,)
+        else:
+            break
+
+    return text
 
 
 # === Самоперевірка ========================================================
