@@ -1,4 +1,5 @@
 import os
+import random
 
 from part1_model import tokenize, build_model, predict_next, generate
 
@@ -27,6 +28,20 @@ def test_inconsistent_start():
     produced = generate(model, start, 40)
     print(produced)
 
+
+    print("with random:")
+    seed = 389
+    start = ("рахували", "сусідню", "бо") 
+    produced = generate(model, start, 40, random.Random(seed))
+    print(produced)
+
+    start = ("швидше", "але", "а") 
+    produced = generate(model, start, 40, random.Random(seed))
+    print(produced)
+
+    start = ("і", "тому", "на") 
+    produced = generate(model, start, 40, random.Random(seed))
+    print(produced)
 
 def main():
     test_inconsistent_start()
