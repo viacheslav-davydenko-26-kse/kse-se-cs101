@@ -108,7 +108,18 @@ def predict_next(model, context):
     кількість СТРОГО більша за найкращу. Починайте найкращу кількість з нуля.
     """
     # Приберіть рядок нижче і напишіть свій код.
-    return None
+    if context not in model:
+        return None
+
+    most_repeated_word = ""
+    most_repeats = 0
+
+    for word, count in sorted(model[context].items()):
+        if count > most_repeats:
+            most_repeated_word = word
+            most_repeats = count
+
+    return most_repeated_word
 
 
 def sample_next(model, context, rng):
