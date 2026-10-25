@@ -49,9 +49,13 @@ def collect_stats(path):
 
 def print_summary(stats):
     """Друкує зведення. САМЕ ЦЮ ФУНКЦІЮ ви змінюватимете у двох гілках."""
+    print("=" * 30)
+    print(f"{'Зведення':=^30}")
     print("Рядків:", stats["lines"])
     print("Слів:", stats["words"])
     print("Найдовше слово:", stats["longest"])
+    print("Середня довжина слова:", stats["average"])
+    print("=" * 30)
 
 
 if __name__ == "__main__":
