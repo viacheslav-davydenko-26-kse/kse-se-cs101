@@ -15,6 +15,6 @@ rm project/data/sample.txt
 # 6
 ls -lR project > structure.txt
 # 7
-grep -r project/data > found.txt
+grep -r "коміт" project/data > found.txt
 # 8
 ls project/data | wc -l >> found.txt
