@@ -1,0 +1,18 @@
+project:
+total 16
+-rw-r--r-- 1 nevi nevi   42 Oct 25 19:06 config.local
+drwxr-xr-x 2 nevi nevi 4096 Oct 25 19:06 data
+drwxr-xr-x 2 nevi nevi 4096 Oct 25 19:06 docs
+drwxr-xr-x 2 nevi nevi 4096 Oct 25 19:06 src
+
+project/data:
+total 4
+-rw-r--r-- 1 nevi nevi 1643 Oct 25 19:00 sample.txt
+
+project/docs:
+total 4
+-rw-r--r-- 1 nevi nevi 19 Oct 25 19:06 readme.txt
+
+project/src:
+total 4
+-rw-r--r-- 1 nevi nevi 2003 Oct 25 19:00 summary.py
