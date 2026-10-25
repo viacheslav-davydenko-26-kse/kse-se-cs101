@@ -11,10 +11,10 @@ touch project/config.local
 echo "API_KEY=demo-1234-ce-ne-spravzhniy-kliuch" > project/config.local
 # 5
 cp project/data/sample.txt project/data/backup.txt
-rm project/data/sample.txt
+rm project/data/backup.txt
 # 6
 ls -lR project > structure.txt
 # 7
-grep -r "коміт" project/data > found.txt
+grep -rn "коміт" project/data > found.txt
 # 8
 ls project/data | wc -l >> found.txt
