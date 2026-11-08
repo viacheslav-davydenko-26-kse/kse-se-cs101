@@ -1,0 +1,4 @@
+document.txt: OK
+document.txt: FAILED
+a203ba4e9c565ec07ecedc94a54194aa0b237cf65203aca0e1bd420c93f2cc28  -
+00797a5948f0b77cd224add37f3193c3195d82f352aceb605a3922a15dae9ca5  -
