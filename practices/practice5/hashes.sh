@@ -3,7 +3,7 @@ sha256sum document.txt > document.sha256
 # 2
 sha256sum -c document.sha256 > hash_check.txt
 # 3
-echo "будь-який рядок через" >> document.txt
+echo "будь-який рядок" >> document.txt
 # 4
 sha256sum -c document.sha256 >> hash_check.txt
 # 5
