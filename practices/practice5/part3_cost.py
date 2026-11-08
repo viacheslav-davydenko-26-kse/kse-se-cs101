@@ -52,7 +52,7 @@ def sweep_seconds(rate, digits):
     Підказка: у Python степінь пишеться 10 ** digits.
     """
     # Приберіть рядок нижче і напишіть свій код.
-    return 0.0
+    return (10 ** digits) / rate
 
 
 def human(seconds):
@@ -68,7 +68,14 @@ def human(seconds):
     були і число, і одиниця, розділені пробілом.
     """
     # Приберіть рядок нижче і напишіть свій код.
-    return str(seconds)
+    if seconds < 60:
+        return f"{round(seconds)} с"
+    elif seconds < 3600:
+        return f"{round(seconds / 60)} хв"
+    elif seconds < 86400:
+        return f"{round(seconds / 3600)} год"
+    else:
+        return f"{round(seconds / 86400)} діб"
 
 
 if __name__ == "__main__":
