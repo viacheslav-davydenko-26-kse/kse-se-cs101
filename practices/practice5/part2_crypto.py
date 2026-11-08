@@ -107,7 +107,20 @@ def crack_naive(token):
     поверніть разом із PIN.
     """
     # Приберіть рядок нижче і напишіть свій код.
-    return None, None
+    pin = None
+    message = None
+
+    for i in range(1000000):
+        str_pin = "%06d" % i
+        try:
+            bin_message = Fernet(weak_key(str_pin)).decrypt(token)
+            message = bin_message.decode("utf-8")
+            pin = str_pin
+            break
+        except InvalidToken:
+            continue
+
+    return pin, message
 
 
 if __name__ == "__main__":
